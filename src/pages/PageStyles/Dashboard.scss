@@ -1,0 +1,64 @@
+.dashboard-layout {
+ padding: 2rem;
+max-width: 1400px;
+margin: 5% auto;
+  .dashboard-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+
+      h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      p {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #222;
+      }
+    }
+  }
+
+  .recent-activity {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 0.75rem;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+
+      th {
+        color: #555;
+      }
+    }
+  }
+}

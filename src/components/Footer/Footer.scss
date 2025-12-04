@@ -1,0 +1,60 @@
+.dukan-dar-footer {
+    background-color: #111;
+    padding-block: 100px;
+    ul{
+        list-style: none;
+    }
+}
+
+.footer-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-block: 100px;
+}
+
+.foorer-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo h2 a{
+    color: #fff;
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.foorer-flex h3{
+    color:#fff;
+    font-weight:400;
+    opacity:.5;
+    margin-bottom:30px;
+}
+.dukan-menu li,
+.dukan-services li{
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 20px;
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+.reach-dukan ul {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    li{
+            width:48px;
+            height:48px;
+            background-color: rgb(255 255 255 / 7%);
+            border-radius:50%;    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        svg{
+            width: 25px;
+            fill: #fff;
+        }
+    }
+}

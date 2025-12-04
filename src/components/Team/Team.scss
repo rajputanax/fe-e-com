@@ -1,0 +1,73 @@
+.our-dukan-team {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    padding-block: 30px;
+}
+.our-team-meambers {
+    display: flex;
+    flex: 0 0 60%;
+    background-image: url("/images/laptop.svg");
+    background-size: cover;
+    height: 650px;
+    align-items: center;
+    padding-left: 48px;
+    gap: 100px;
+}
+
+.team-card {
+    flex: 0 0 34%;
+    &:first-child .team-card-img{
+        background-color:#6a7be2;
+    }
+    &:last-child .team-card-img{
+        background-color:#FCA086;
+    }
+}
+.team-card-img{
+    height:280px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    margin-bottom: 15px;
+    img{
+     width: 250px;
+    height: 250px;
+    object-fit:contain;
+}
+} 
+.member-name {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.role {
+    font-size: 16px;
+    color: #fff;
+    opacity: .50;
+}
+
+.mini-heading {
+    font-size: 16px;
+    color: #fff;
+    line-height: 32px;
+    margin-bottom: 30px;
+}
+
+.main-heading {
+    font-size: 40px;
+    color: #fff;
+    line-height: 48px;
+    margin-bottom: 30px;
+}
+
+.team-description {
+    font-size: 16px;
+    color: #fff;
+    max-width: 470px;
+    line-height: 32px;
+    opacity: .8;
+    margin-bottom: 30px;
+}

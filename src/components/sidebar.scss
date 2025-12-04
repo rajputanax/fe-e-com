@@ -1,0 +1,136 @@
+.dukan-sidebar {
+  width: 240px;
+
+    transition: all .2s 
+linear;
+    background: #212121;
+    color: #fff;
+    min-height: calc(100vh - 85px);
+    display: flex
+;
+    flex-direction: column;
+    padding: 0 20px;
+    position: sticky;
+    top: 85px;
+
+  .dukan-sidebar-header {
+    margin-bottom: 1rem;
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+
+  .dukan-sidebar-nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 1rem;
+        display: flex
+;
+    align-items: center;
+    height: 40px;
+
+        a {
+          color: #ccc;
+          text-decoration: none;
+          font-size: 1rem;
+          padding: 10px;
+          display: block;
+          border-radius: 8px;
+          transition: background 0.3s, color 0.3s;
+
+          &:hover {
+            background: #222;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.toggle-btn {
+  position: relative;
+  border:1px solid #fff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.toggle-btn::before {
+  position: absolute;
+  content: '';
+  width: 199px;
+  height: 1px;
+  background: #fff;
+  bottom: 17px;
+  left: -199px;
+}
+.dukan-sidebar-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.w-80 {
+  width: 80px;
+  transition: all .2s linear;
+
+  .dukan-sidebar-nav {
+    ul {
+      li {
+        a {
+          color: #ccc;
+          text-decoration: none;
+          font-size: 1rem;
+          padding: 10px;
+          display: block;
+          border-radius: 8px;
+          transition: background 0.3s, color 0.3s;
+          display: none;
+        }
+      }
+
+      svg {
+        display: inline-block;
+        animation: blink forwards 1.6s linear infinite;
+       
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+
+          opacity: .1;
+
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width:992px) {
+  .dukan-sidebar {
+    background: #212121cf;
+   
+  }
+}
+
+@media (max-width:768px) {
+  .dukan-sidebar {
+    background: #212121cf;
+    position: absolute;
+  }
+}

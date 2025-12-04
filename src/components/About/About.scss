@@ -1,0 +1,48 @@
+.about-dukan-dar{
+    display: flex;
+    align-items: center;
+    background-color: #111;
+}
+.attachment{
+    background-image: url("/images/gradient-bg-1.svg");
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    flex: 0 0 50%;
+    img{
+        width: 496px;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+.about-dukan-content {
+    padding: 100px;
+    .mini-heading{
+        font-size: 16px;
+    letter-spacing: 3px;
+    color: #fff;
+    opacity: .5;
+    margin-bottom: 20px;
+    }
+    .main-heading{
+       font-size: 56px;
+    color: #fff;
+    line-height: 64px;
+    margin-bottom: 30px; 
+    }
+    .about-desc{
+        font-size: 16px;
+    color: #fff;
+    line-height: 32px;
+    opacity: .8;
+    max-width: 470px;
+    margin-bottom: 30px;
+    }
+    a{
+            color: #fff;
+    text-decoration: none;
+    }
+}
