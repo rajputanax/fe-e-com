@@ -13,13 +13,7 @@ const Team = () => {
                 <div className="member-name">Anas Jameel</div>
                 <p className="role">Developer</p>
             </div>
-            <div className="team-card">
-                <div className="team-card-img">
-                    {/* <img src={Mubashar} alt="Mubashar Developer" /> */}
-                </div>
-                <div className="member-name">Mubashar Akram</div>
-                <p className="role">Developer</p>
-            </div>
+           
         </div>
         <div className="meet-dukan-team">
             <div className="mini-heading">Our Team</div>
