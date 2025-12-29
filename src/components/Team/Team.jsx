@@ -15,7 +15,7 @@ const Team = () => {
             </div>
             <div className="team-card">
                 <div className="team-card-img">
-                    <img src={Mubashar} alt="Mubashar Developer" />
+                    {/* <img src={Mubashar} alt="Mubashar Developer" /> */}
                 </div>
                 <div className="member-name">Mubashar Akram</div>
                 <p className="role">Developer</p>

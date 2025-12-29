@@ -10,7 +10,7 @@ const ProductZoom = ({ product }) => {
           smallImage: {
             alt: product.name,
             isFluidWidth: true,
-            src: product.images,
+            src: product.images ||product.image ,
           },
           largeImage: {
             src: product.images,

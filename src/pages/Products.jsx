@@ -24,6 +24,7 @@ const Products = () => {
      console.log(',,,,,,,,,', res)
       setTotal(res.data.total);
       setLimit(res.data.limit)
+      console.log(products)
     } catch (err) {
       console.error(err?.response?.data?.msg || "Something went wrong");
     } finally {
@@ -38,7 +39,7 @@ const Products = () => {
   return (
     <div className="products-page container">
       <div className="products-header">
-        <h2>Products</h2>
+        <h2 >Products</h2>
         <input
           type="text"
           placeholder="Search products..."
@@ -49,18 +50,20 @@ const Products = () => {
       {loading ? (
         <div className="flex justify-center items-center gap-2 mt-10" style={{ minHeight: 500 }}>
           <ScaleLoader />
+          
         </div>
-      ) : (
+      ) : 
+        !products ? <p className='flex justify-center items-center min-h-[50vh]'>No Products found </p> : (
         <div className="products-grid">
           {products.map((product) => (
             <Link to={`../details/${product._id}`}>
               <div className="product-card" key={product._id}>
                 <div className="product-image">
-                  <img src={product.images} alt={product.name} />
+                  <img src={product.images || product.image} alt={product.name} />
                 </div>
                 <h3>{product.name}</h3>
                 <p className="category">{product.category}</p>
-                <p className="price">${product.price}</p>
+                <p className="price">{product.price} $</p>
                 <p className="stock">In Stock: {product.stock}</p>
                 <button className="btn">View Details</button>
               </div>
@@ -68,7 +71,8 @@ const Products = () => {
 
           ))}
         </div>
-      )}
+      )
+      }
 
       <Pagination
         total={total}

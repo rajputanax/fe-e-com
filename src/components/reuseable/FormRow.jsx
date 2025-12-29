@@ -17,7 +17,7 @@ const FormRow = React.forwardRef(function FormRow(
       <input
         type={type}
         id={name}
-        autoComplete="off"
+        autoComplete="new_email"
         name={name}
         placeholder={placeholder}
         ref={ref}           // ✅ Forward the ref to connect RHF

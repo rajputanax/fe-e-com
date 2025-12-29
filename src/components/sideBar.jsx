@@ -1,4 +1,4 @@
-import { Link, useNavigate  } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import './sidebar.scss'
 import CustomFetch from "../utills/CustomFetch";
@@ -13,9 +13,9 @@ import { RiUserShared2Fill } from "react-icons/ri";
 import { FaPowerOff } from "react-icons/fa6";
 import { MdAddBusiness } from "react-icons/md";
 const Sidebar = ({ role }) => {
-  
+
   const navigate = useNavigate();
- const handleLogout = async () => {
+  const handleLogout = async () => {
     try {
       await CustomFetch.post("/user/logout");
       toast.success("Successfully logged out!");
@@ -51,15 +51,17 @@ const Sidebar = ({ role }) => {
             <Link to="products">Products</Link>
 
           </li>
-   
-{role === "seller" || "admin"  ? 
-  <li>
-    <MdAddBusiness />
-    <Link to="add-product">Add-Products</Link>
-  </li>
- : 
-  <li className='!hidden'>{}</li>
-}
+
+          {role === "seller" || role === "admin" ?
+           <li>
+              <MdAddBusiness />
+              <Link to="add-product">Add-Products</Link>
+            </li>
+          
+         
+            :
+              <li className='!hidden'>{ }</li>
+          }
           <li>
             <TbSitemap />
             <Link to="orders">Orders</Link>
@@ -78,8 +80,8 @@ const Sidebar = ({ role }) => {
 
                 <RiUserShared2Fill />
 
-               <Link to='/'>user</Link>
-                </li>
+                <Link to='/'>user</Link>
+              </li>
 
 
 
@@ -87,10 +89,10 @@ const Sidebar = ({ role }) => {
         </ul>
       </nav>
       {/* ........Logout Button */}
-              <button className="logout p-2 flex justify-center" onClick={handleLogout}>
-             <FaPowerOff />
-              </button>
-        
+      <button className="logout p-2 flex justify-center" onClick={handleLogout}>
+        <FaPowerOff />
+      </button>
+
     </aside>
   );
 };

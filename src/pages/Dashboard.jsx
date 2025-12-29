@@ -1,6 +1,22 @@
 import './PageStyles/Dashboard.scss'
+import { useLoaderData } from "react-router";
+import CustomFetch from '../utills/CustomFetch.js'
+import { toast } from "react-toastify";
+export const loader = async ()=>{
+     try{
+       const { data } = await CustomFetch.get('/admin/stats');
+    toast.success("Dashboard loaded successfully");
+    return data;
+     }catch(err){
+console.log(err)
+     }
+}
 
-const Dashboard = () => {
+
+const Dashboard = ({user}) => {
+  const stats = useLoaderData();
+  console.log(stats , 'obj')
+ 
   return (
     <div className="dashboard-layout">
       <div className="container">
@@ -10,20 +26,20 @@ const Dashboard = () => {
         <div className="stats-grid">
           <div className="card">
             <h3>Total Users</h3>
-            <p>1,245</p>
+            <p>{stats.data.totalUsers}</p>
           </div>
           <div className="card">
-            <h3>Active Orders</h3>
-            <p>342</p>
+            <h3>Available Products</h3>
+            <p>{stats.data.totalProducts}</p>
           </div>
-          <div className="card">
+          {/* <div className="card">
             <h3>Revenue</h3>
             <p>$12,580</p>
-          </div>
-          <div className="card">
+          </div> */}
+          {/* <div className="card">
             <h3>Pending Tasks</h3>
             <p>8</p>
-          </div>
+          </div> */}
         </div>
 
         {/* ====== Recent Activity ====== */}

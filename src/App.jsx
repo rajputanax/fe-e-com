@@ -20,15 +20,19 @@ import ProtectedLayout from "./pages/ProtectedLayout"
 // =========================================================
 import { action as registerAction } from './pages/Register'
 import { action as loginAction } from './pages/Login'
+import { action as productAddAction } from './pages/AddProduct'
 
 // ========================================================
 
 import { loader as userLoader } from "./pages/ProtectedLayout"
 import { loader as currentLoader} from "./pages/details"
+import { loader as dashLoader} from "./pages/Dashboard"
 // import { loader as prodLoader } from "./pages/Products"
 
 
-
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// gsap.registerPlugin(ScrollTrigger);
 
 
  const router = createBrowserRouter([
@@ -55,9 +59,9 @@ import { loader as currentLoader} from "./pages/details"
     element: <ProtectedLayout />,
     loader: userLoader,
     children: [
-      { index: true, element: <Dashboard /> },
+      { index: true, element: <Dashboard /> ,loader:dashLoader},
       { path: "products", element: <Products /> },
-      { path: "add-product", element: <AddProduct /> },
+      { path: "add-product", element: <AddProduct /> ,action:productAddAction},
       { path: "orders", element: <Orders /> },
       { path: "details/:id", element: <Details />, loader: currentLoader },
       { path: "settings", element: <Settings /> },
@@ -67,5 +71,7 @@ import { loader as currentLoader} from "./pages/details"
 ]);
 
 export default function App() {
+
+ 
   return <RouterProvider router={router} />;
 }
