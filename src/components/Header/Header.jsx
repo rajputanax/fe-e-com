@@ -24,7 +24,7 @@ const Header = ({ bgColor, signInUser }) => {
         <div className="dukan-header-inner">
           {/*........ Logo */}
           <div className="logo">
-            <Link to="/">Dukan Dar</Link>
+            <Link to="/">DukanDar</Link>
           </div>
 
           {/* Nav Links */}

@@ -9,7 +9,7 @@ import { ScaleLoader } from "react-spinners"
 
 
 
-const Products = () => {
+const Products = ({user}) => {
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -53,7 +53,7 @@ const Products = () => {
           
         </div>
       ) : 
-        !products ? <p className='flex justify-center items-center min-h-[50vh]'>No Products found </p> : (
+        !products || products.length === 0 ? <p className='flex justify-center items-center min-h-[50vh]'>{user?.currentUser?.role === 'seller' ? "you did'nt added products yet":'No Products found'} </p> : (
         <div className="products-grid">
           {products.map((product) => (
             <Link to={`../details/${product._id}`}>

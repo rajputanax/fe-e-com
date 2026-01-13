@@ -14,7 +14,7 @@ const ProductZoom = ({ product }) => {
           },
           largeImage: {
             src: product.images,
-            width: 1800,
+            width: 1900,
             height: 1800,
           },
           enlargedImageContainerDimensions: {

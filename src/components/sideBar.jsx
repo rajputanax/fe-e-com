@@ -12,13 +12,15 @@ import { GrUserAdmin } from "react-icons/gr";
 import { RiUserShared2Fill } from "react-icons/ri";
 import { FaPowerOff } from "react-icons/fa6";
 import { MdAddBusiness } from "react-icons/md";
+import { useCartContext } from "../pages/context/cartprovider";
 const Sidebar = ({ role }) => {
-
+const {clearCart} = useCartContext();
   const navigate = useNavigate();
   const handleLogout = async () => {
     try {
       await CustomFetch.post("/user/logout");
       toast.success("Successfully logged out!");
+      clearCart();
       return navigate("/login");
     } catch (err) {
       console.log(err);
