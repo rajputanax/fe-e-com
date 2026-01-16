@@ -10,16 +10,16 @@ const ProductZoom = ({ product }) => {
           smallImage: {
             alt: product.name,
             isFluidWidth: true,
-            src: product.images ||product.image ,
+            src: product.images || product.image,
           },
           largeImage: {
-            src: product.images,
-            width: 1900,
-            height: 1800,
+            src: product.images || product.image,
+            width: 1600,
+            height: 1600,
           },
           enlargedImageContainerDimensions: {
-            width: "200%",
-            height: "120%",
+            width: "100%",
+            height: "100%",
           },
         }}
       />

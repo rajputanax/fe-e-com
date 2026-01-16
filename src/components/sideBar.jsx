@@ -36,7 +36,7 @@ const {clearCart} = useCartContext();
   }
 
   return (
-    <aside className={`dukan-sidebar ${open ? 'w-80' : ''}`}>
+    <aside className={`dukan-sidebar ${open ? 'w-80px' : ''}`}>
       <div className="dukan-sidebar-header">
         <div className="toggle-btn" onClick={sideBarOpener}>
           <RxHamburgerMenu />
