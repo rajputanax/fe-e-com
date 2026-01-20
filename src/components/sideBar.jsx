@@ -42,7 +42,7 @@ const {clearCart} = useCartContext();
           <RxHamburgerMenu />
         </div>
       </div>
-      <nav className="dukan-sidebar-nav min-h-[80vh]">
+      <nav className="dukan-sidebar-nav mb-60">
         <ul>
           <li>
             <RiDashboardHorizontalLine />

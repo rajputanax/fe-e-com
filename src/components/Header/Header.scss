@@ -14,7 +14,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px ;
+    flex-wrap: wrap;
 }
 .dukan-nav-list{
     display: flex;
@@ -89,6 +90,11 @@
 @media (max-width:992px) {
     .bg-color {
     background: #212121cf;
-    padding-inline: 60px;
+   .welcome-user {
+    display: none;
+}
+.dukan-nav-list{
+    display: none;
+}
 }
 }

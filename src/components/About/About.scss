@@ -1,9 +1,19 @@
-.about-dukan-dar{
+.about-dukan-dar {
     display: flex;
     align-items: center;
     background-color: #111;
+
+    @media (max-width: 992px) {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    @media (max-width: 576px) {
+        padding: 30px 15px;
+    }
 }
-.attachment{
+
+.attachment {
     background-image: url("/images/gradient-bg-1.svg");
     height: 720px;
     display: flex;
@@ -11,38 +21,96 @@
     align-items: center;
     background-size: cover;
     flex: 0 0 50%;
-    img{
+
+    img {
         width: 496px;
         height: 380px;
         object-fit: cover;
         border-radius: 10px;
+
+        @media (max-width: 992px) {
+            width: 400px;
+            height: 300px;
+        }
+
+        @media (max-width: 576px) {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 992px) {
+        flex: 1 1 100%;
+        height: auto;
+        margin-bottom: 30px;
     }
 }
+
 .about-dukan-content {
     padding: 100px;
-    .mini-heading{
+
+    @media (max-width: 992px) {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    @media (max-width: 576px) {
+        padding: 30px 15px;
+    }
+
+    .mini-heading {
         font-size: 16px;
-    letter-spacing: 3px;
-    color: #fff;
-    opacity: .5;
-    margin-bottom: 20px;
+        letter-spacing: 3px;
+        color: #fff;
+        opacity: 0.5;
+        margin-bottom: 20px;
+
+        @media (max-width: 576px) {
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
     }
-    .main-heading{
-       font-size: 56px;
-    color: #fff;
-    line-height: 64px;
-    margin-bottom: 30px; 
+
+    .main-heading {
+        font-size: 56px;
+        color: #fff;
+        line-height: 64px;
+        margin-bottom: 30px;
+
+        @media (max-width: 992px) {
+            font-size: 40px;
+            line-height: 48px;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 28px;
+            line-height: 36px;
+        }
     }
-    .about-desc{
+
+    .about-desc {
         font-size: 16px;
-    color: #fff;
-    line-height: 32px;
-    opacity: .8;
-    max-width: 470px;
-    margin-bottom: 30px;
+        color: #fff;
+        line-height: 32px;
+        opacity: 0.8;
+        max-width: 470px;
+        margin-bottom: 30px;
+
+        @media (max-width: 992px) {
+            max-width: 100%;
+            font-size: 15px;
+            line-height: 28px;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
     }
-    a{
-            color: #fff;
-    text-decoration: none;
+
+    a {
+        color: #fff;
+        text-decoration: none;
     }
 }

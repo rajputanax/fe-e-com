@@ -45,7 +45,7 @@ const Header = ({ bgColor, signInUser }) => {
                 Hody {signInUser} !
               </p>
             ) : (
-              <button className="btn-explore-app">Explore App</button>
+              <Link to='/login' className="btn-explore-app">Login</Link>
             )}
 
             {/*.......... 🛒 Cart Icon with Badge */}
