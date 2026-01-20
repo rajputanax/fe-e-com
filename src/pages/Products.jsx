@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Pagination from "../components/pagination"
 import { Link } from 'react-router-dom';
 import { ScaleLoader } from "react-spinners"
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 
 
@@ -36,10 +37,27 @@ const Products = ({user}) => {
     fetchProducts();
   }, [page]);
 
+  // Add this function before the return statement
+  const handleDelete = async (productId) => {
+    if (window.confirm("Are you sure you want to delete this product?")) {
+      try {
+        await CustomFetch.delete(`/products/${productId}`);
+        fetchProducts();
+      } catch (err) {
+        console.error(err?.response?.data?.msg || "Delete failed");
+      }
+    }
+  };
+
+  const handleEdit = (productId) => {
+    // Navigate to edit page
+    window.location.href = `../edit/${productId}`;
+  };
+
   return (
     <div className="products-page container">
       <div className="products-header">
-        <h2 >Products</h2>
+        <h2>Products</h2>
         <input
           type="text"
           placeholder="Search products..."
@@ -50,14 +68,16 @@ const Products = ({user}) => {
       {loading ? (
         <div className="flex justify-center items-center gap-2 mt-10" style={{ minHeight: 500 }}>
           <ScaleLoader />
-          
         </div>
-      ) : 
-        !products || products.length === 0 ? <p className='flex justify-center items-center min-h-[50vh]'>{user?.currentUser?.role === 'seller' ? "you did'nt added products yet":'No Products found'} </p> : (
+      ) : !products || products.length === 0 ? (
+        <p className='flex justify-center items-center min-h-[50vh]'>
+          {user?.currentUser?.role === 'seller' ? "you didn't add products yet" : 'No Products found'}
+        </p>
+      ) : (
         <div className="products-grid">
           {products.map((product) => (
-            <Link to={`../details/${product._id}`}>
-              <div className="product-card" key={product._id}>
+            <div className="product-card border rounded shadow-lg" key={product._id}>
+              <Link to={`../details/${product._id}`}>
                 <div className="product-image">
                   <img src={product.images || product.image} alt={product.name} />
                 </div>
@@ -66,13 +86,19 @@ const Products = ({user}) => {
                 <p className="price">{product.price} $</p>
                 <p className="stock">In Stock: {product.stock}</p>
                 <button className="btn">View Details</button>
+              </Link>
+              <div className="product-actions flex gap-2 mt-4 justify-end">
+                <span className="cursor-pointer text-blue-500 border rounded-[50%] p-2 hover:text-blue-700">
+                  <FiEdit2 onClick={() => handleEdit(product._id)} className="icon edit-icon" />
+                </span>
+                <span className="cursor-pointer text-red-500 border rounded-[50%] p-2 hover:text-red-700">
+                  <FiTrash2 onClick={() => handleDelete(product._id)} className="icon delete-icon" />
+                </span>
               </div>
-            </Link>
-
+            </div>
           ))}
         </div>
-      )
-      }
+      )}
 
       <Pagination
         total={total}
