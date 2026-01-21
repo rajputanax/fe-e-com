@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai"; // 🛒 Add this import
 import { useState } from "react";
 import { useCartContext } from "../../pages/context/cartprovider";
 import { RiDeleteBin7Line } from "react-icons/ri";
-
+import { PiCigaretteDuotone } from "react-icons/pi";
 const Header = ({ bgColor, signInUser }) => {
 
   const { cart, deleteItem, deleteAll } = useCartContext();
@@ -24,7 +24,7 @@ const Header = ({ bgColor, signInUser }) => {
         <div className="dukan-header-inner">
           {/*........ Logo */}
           <div className="logo">
-            <Link to="/">smokePlanet</Link>
+            <Link to="/"><PiCigaretteDuotone />smokePlanet</Link>
           </div>
 
           {/* Nav Links */}
