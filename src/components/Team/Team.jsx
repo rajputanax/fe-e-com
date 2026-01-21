@@ -21,7 +21,7 @@ const Team = () => {
                 Meet Our
             </h2>
             <p className="team-description">
-                Meet the dedicated professionals driving innovation and excellence at Dukan Dar every day.
+                Meet the dedicated professionals driving innovation and excellence at smokePlanet every day.
             </p>
         </div>
 

@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="footer-logo">
                     <h2>
                     <a href="#">
-                        Dukan Dar
+                        smokePlanet
                     </a>
                     </h2>
                 </div>
