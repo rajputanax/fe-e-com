@@ -92,7 +92,7 @@ img {
 
 
 .add-to-cart {
-  z-index: -1 !important;
+  /* z-index: -1 !important; */
   --background-default: #17171B;
   --background-hover: #0A0A0C;
   --background-scale: 1;
